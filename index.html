@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Calculator</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <script src="percent.js"></script>
+</head>
+
+<body>
+    <h1>Budget Calculator</h1>
+    <main>
+        <section class="split">
+            <section class="career">
+                <h2>Career</h2>
+                <select id="career2electricboogaloo">
+                    
+                </select>
+            </section>
+            <section class="uncleSam">
+                <div class="columnSam">
+                    <h2>Gross Monthly Income</h2>
+                    <input id="inputGross" type="number">
+                    <section class="umm-Angel">
+                        <section class="col1">
+                            <p>Federal Taxes: 12%</p>
+                            <p>State Taxes: 7%</p>
+                            <p>Social Security: 6.2%</p>
+                            <p>Medicare: 1.45%</p>
+                            <p>State Disability: 1%</p>
+                            <p>Retirement: 5%</p>
+                            <p>Medical Insurance $180</p>
+                        </section>
+                        <section class="col2">
+                            <p id="fed"> </p>
+                            <p id="state"> </p>
+                            <p id="social"> </p>
+                            <p id="medicare"> </p>
+                            <p id="stateDis"> </p>
+                            <p id="retire"> </p>
+                            <p>$180</p>
+                        </section>
+                    </section>
+
+                    <div class="rowSam">
+                        <p><span class="deductions-final" id="outputGross">$XXXX</span> <br>Gross Monthly Income</p>
+                        <p><span class="deductions-final" id="outputLost">$XXXX</span> <br>Amount Taxed</p>
+                        <p><span class="deductions-final" id="afterSam">$XXXX </span> <br>Net Monthly Income</p>
+                    </div>
+            </section>
+        </section>
+        <section class="expenses">
+            <section class="rowExp">
+                <h2>Expenses</h2>
+                <section class="needs">
+                    <h3>Needs</h3>
+                    <label for="">Housing and Insurance:</label>
+                    <input class="needsI topI" type="number">
+                    <label class="utility" for="">Utilities:</label>
+                    <input class="needsI" type="number">
+                    <label for="">Transportation:</label>
+                    <input class="needsI" type="number">
+                    <label for="">Food:</label>
+                    <input class="needsI" type="number">
+                    <label for="">Self Care:</label>
+                    <input class="needsI" type="number">
+                    <label for="">Other:</label>
+                    <input type="number" class="needsI">
+                    <h4 id="totalNeeds">Total %:</h4>
+                    
+                </section>
+                <section class="wants">
+                    <h3>Wants</h3>
+                    <label for="">Media:</label>
+                    <input type="number" class="wantsI">
+                    <label for="">Entertainment:</label>
+                    <input type="number" class="wantsI">
+                    <label for="">Other:</label>
+                    <input type="number" class="wantsI">
+                    <h4 id="totalWants">Total %:</h4>
+                </section>
+                <section class="debt">
+                    <h3>Debt/Savings</h3>
+                    <label for="">Student Loans:</label>
+                    <input type="number" class="debtI">
+                    <label for="">Debts:</label>
+                    <input type="number" class="debtI">
+                    <h4 id="totalDebts">Total %:</h4>
+                </section>
+            </section>
+        </section>
+        <section class="leftover">
+            <h2 id="leftover">Money Left Over: $XXX</h2>
+            <div>
+                <p>Total: $XXXX</p>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+
+</html>

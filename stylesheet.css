@@ -1,0 +1,114 @@
+body {
+    background-color: #B7C9E2;
+    margin: 0%
+}
+
+
+.expenses {
+    background-color: rgba(60, 78, 89, 0.2);
+}
+
+.split {
+    display: flex;
+    flex-direction: row;
+}
+
+.career {
+    margin-right: 3%;
+}
+
+.uncleSam {
+    margin-left: 3%;
+}
+
+.umm-Angel {
+    display: flex;
+    flex-direction: row;
+}
+.col1, .col2{
+    display: flex;
+    flex-direction: column;
+
+align-content: center;
+    margin-left: 4rem;
+   
+}
+
+.col2 > p{
+
+    width: 5rem;
+    background-color: #D9D9D9;
+    border-radius: 2rem;
+}
+
+#inputGross {
+display: flex;
+margin-left: 20%;
+margin: 2%;
+}
+
+
+.columnSam{
+    display: flex;
+    flex-flow: column;
+}
+
+.rowSam{
+    display: flex;
+    margin: 5%;
+}
+
+.needs,.wants,.debt {
+    display: flex;
+    flex-direction: column;
+}
+
+.red {
+    color: red;
+    padding-bottom:15px;
+}
+
+.blue {
+    color: blue;
+    padding-bottom:15px;
+}
+
+.green {
+    color: rgb(57, 93, 4);
+    padding-bottom:15px;
+}
+
+.orange {
+    color: rgb(247, 162, 4);
+    padding-bottom:15px;
+}
+
+.purple {
+    color: purple;
+    padding-bottom:15px;
+}
+
+.expenses {
+    display: flex;
+    padding-left: 3%;
+    
+}
+.needsI{
+    margin-left: 23%;
+}
+.topI {
+    margin-bottom: 0vw;
+}
+.utility{
+    margin-top: 0.8rem;
+}
+.col2 p, .col1 p{
+    padding: .3rem .5rem;
+}
+
+@media screen and (max-width: 430px) {
+.uncleSam {
+    margin-bottom: 3rem;
+    
+}
+}
