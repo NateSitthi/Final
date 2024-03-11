@@ -1,39 +1,31 @@
 let list = new Map();
 
 // rip getCeleryYum function my beloved o7
+let netMonthlyIncome = 0;
+function cbttn(e) {
+    let grossMoney = e;
+    document.getElementById(`inputGross`).value = grossMoney;
+    document.getElementById("fed").innerHTML = `$` + Math.floor(grossMoney * 0.12);
+    let fed = Math.floor(grossMoney * 0.12)
+    document.getElementById("state").innerHTML = `$` + Math.floor(grossMoney * 0.07);
+    let state = Math.floor(grossMoney * 0.07)
+    document.getElementById("social").innerHTML = `$` + Math.floor(grossMoney * 0.062);
+    let social = Math.floor(grossMoney * 0.062)
+    document.getElementById("medicare").innerHTML = `$` + Math.floor(grossMoney * 0.0145);
+    let medicare = Math.floor(grossMoney * 0.0145)
+    document.getElementById("stateDis").innerHTML = `$` + Math.floor(grossMoney * 0.01);
+    let stateDis = Math.floor(grossMoney * 0.01)
+    document.getElementById("retire").innerHTML = `$` + Math.floor(grossMoney * 0.05);
+    let retire = Math.floor(grossMoney * 0.05)
+    document.getElementById("outputGross").innerHTML = `$` + grossMoney;
+    document.getElementById("outputLost").innerHTML = `$` + (fed + state + social + medicare + stateDis + retire + 180);
+    let lost = fed + state + social + medicare + stateDis + retire + 180
+    document.getElementById("afterSam").innerHTML = `$` + (grossMoney - lost);
+    netMonthlyIncome = grossMoney - lost;
+}
 
 document.addEventListener("DOMContentLoaded", function () {
-
-    //document.getElementById("careers").value = inputGross.innertext
-    // input gross should equal the selection made in the careers section
-
-    let netMonthlyIncome =0;
-
-    document.getElementById("career2electricboogaloo").addEventListener('change', function (e) {
-
-        let grossMoney = e.target.value;
-        console.log(e.target.value);
-        document.getElementById(`inputGross`).value = grossMoney;
-        document.getElementById("fed").innerHTML = `$` + Math.floor(grossMoney * 0.12);
-        let fed = Math.floor(grossMoney * 0.12)
-        document.getElementById("state").innerHTML = `$` + Math.floor(grossMoney * 0.07);
-        let state = Math.floor(grossMoney * 0.07)
-        document.getElementById("social").innerHTML = `$` + Math.floor(grossMoney * 0.062);
-        let social = Math.floor(grossMoney * 0.062)
-        document.getElementById("medicare").innerHTML = `$` + Math.floor(grossMoney * 0.0145);
-        let medicare = Math.floor(grossMoney * 0.0145)
-        document.getElementById("stateDis").innerHTML = `$` + Math.floor(grossMoney * 0.01);
-        let stateDis = Math.floor(grossMoney * 0.01)
-        document.getElementById("retire").innerHTML = `$` + Math.floor(grossMoney * 0.05);
-        let retire = Math.floor(grossMoney * 0.05)
-        document.getElementById("outputGross").innerHTML = `$` + grossMoney;
-        document.getElementById("outputLost").innerHTML = `$` + (fed + state + social + medicare + stateDis + retire + 180);
-        let lost = fed + state + social + medicare + stateDis + retire + 180
-        document.getElementById("afterSam").innerHTML = `$` + (grossMoney - lost);
-        netMonthlyIncome = grossMoney - lost;
-    });
-
-    let elementsArray = document.querySelectorAll(".needsI");
+ let elementsArray = document.querySelectorAll(".needsI");
     elementsArray.forEach(function(elem) {
         elem.addEventListener("change", function() {
             let totalNeeds = 0;
@@ -71,11 +63,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-
-
-
-    let leftover = document.getElementById("leftover");
-    
 
 
 });
@@ -179,7 +166,8 @@ function buildList(jobs) {
     for (let job of jobs) {
 
         //start an HTML section for each job
-        html += `<option value="${job.salary}">`;
+        html += `<button class = "bttn" onclick="cbttn(${job.salary})">${job.occupation}</button>`
+
 
         /* An alternative way of looping through each item in the data, not as useful for this assignment but something to keep in mind for a story? ... */
         //loop through each entry and create a div for each key:value pair
@@ -188,7 +176,7 @@ function buildList(jobs) {
         // }
 
         //create a div element for the job title
-        html += `${job.occupation}`;
+  
         //create a div element for the salary and format it as currency
 
         // document.getElementById(`inputGross`).value = job.salary;//.toLocaleString('en-US');
@@ -197,7 +185,7 @@ function buildList(jobs) {
 
 
         //close the section
-        html += '</option>';
+       
     }
 
     //return the completed html
