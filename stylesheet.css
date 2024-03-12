@@ -113,7 +113,7 @@ margin: 2%;
 }
 }
 .careerlist {
-    width: 20rem;
+    width: 40rem;
     height: 35rem;
     overflow: auto;
     display: flex;
@@ -125,4 +125,12 @@ margin: 2%;
     width: 9.5rem;
     height: 3rem;
     background-color: #94ebc0;
+}
+.split {
+    display: flex;
+    align-content: flex-start;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
 }
