@@ -60,7 +60,6 @@ document.addEventListener("DOMContentLoaded", function () {
             totalDebts= totalDebts+(Number(debts.value));
             console.log(totalDebts)
             document.getElementById("totalDebts").innerHTML = `Total %: ${Math.floor((totalDebts/netMonthlyIncome)*100)}%`
-            console.log(leftover);
         });
     });
     
@@ -72,7 +71,7 @@ let debtOut = document.getElementById("totalDebts");
 let needsOut = document.getElementById("totalNeeds");
 let wantsOut = document.getElementById("totalWants");
 let leftover = document.getElementById("leftover");
-leftover = `Money Left Over: ${netMonthlyIncome-debtOut-needsOut-wantsOut}`
+leftover = `Money Left Over: ${netMonthlyIncome-debtOut-needsOut-wantsOut}`;
 
 
 
