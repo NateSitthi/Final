@@ -25,53 +25,56 @@ function cbttn(e) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
- let elementsArray = document.querySelectorAll(".needsI");
-    elementsArray.forEach(function(elem) {
-        elem.addEventListener("change", function() {
+    let elementsArray = document.querySelectorAll(".needsI");
+    elementsArray.forEach(function (elem) {
+        elem.addEventListener("change", function () {
             let totalNeeds = 0;
-            console.log(typeof(totalNeeds));
-            console.log(typeof(Number(elem.value)))// for some reason this value is a string not a number
-            totalNeeds= totalNeeds+(Number(elem.value));
+            console.log(typeof (totalNeeds));
+            console.log(typeof (Number(elem.value)))// for some reason this value is a string not a number
+            totalNeeds = totalNeeds + (Number(elem.value));
             console.log(totalNeeds)
-            document.getElementById("totalNeeds").innerHTML = `Total %: ${Math.floor((totalNeeds/netMonthlyIncome)*100)}%`
+            document.getElementById("totalNeeds").innerHTML = `Total %: ${Math.floor((totalNeeds / netMonthlyIncome) * 100)}%`
         });
     });
 
     let wants = document.querySelectorAll(".wantsI");
- 
-    wants.forEach(function(wants) {
-        wants.addEventListener("change", function() {
+
+    wants.forEach(function (wants) {
+        wants.addEventListener("change", function () {
             let totalWants = 0;
-            console.log(typeof(totalWants));
-            console.log(typeof(Number(wants.value)))
-            totalWants= totalWants+(Number(wants.value));
+            console.log(typeof (totalWants));
+            console.log(typeof (Number(wants.value)))
+            totalWants = totalWants + (Number(wants.value));
             console.log(totalWants)
-            document.getElementById("totalWants").innerHTML = `Total %: ${Math.floor((totalWants/netMonthlyIncome)*100)}%`
+            document.getElementById("totalWants").innerHTML = `Total %: ${Math.floor((totalWants / netMonthlyIncome) * 100)}%`
         });
     });
 
     let debts = document.querySelectorAll(".debtI");
- 
-    debts.forEach(function(debts) {
-        debts.addEventListener("change", function() {
+
+    debts.forEach(function (debts) {
+        debts.addEventListener("change", function () {
             let totalDebts = 0;
-            console.log(typeof(totalDebts));
-            console.log(typeof(Number(debts.value)))
-            totalDebts= totalDebts+(Number(debts.value));
+            console.log(typeof (totalDebts));
+            console.log(typeof (Number(debts.value)))
+            totalDebts = totalDebts + (Number(debts.value));
             console.log(totalDebts)
-            document.getElementById("totalDebts").innerHTML = `Total %: ${Math.floor((totalDebts/netMonthlyIncome)*100)}%`
+            document.getElementById("totalDebts").innerHTML = `Total %: ${Math.floor((totalDebts / netMonthlyIncome) * 100)}%`
         });
     });
-    
-
-
-
+    document.getElementById("Balance").onclick = function () {
+        let debtOut = (Number(document.getElementById("totalDebts")));
+        let needsOut = (Number(document.getElementById("totalNeeds")));
+        let wantsOut = (Number(document.getElementById("totalWants")));
+        let remainingBalance = netMonthlyIncome - debtOut - needsOut - wantsOut;
+        console.log(debtOut);
+        console.log(needsOut);
+        console.log(wantsOut);
+        console.log(typeof (remainingBalance));
+        document.getElementById("leftover").textContent = `Money Left Over: ${remainingBalance}`;
+    };
 });
-let debtOut = document.getElementById("totalDebts");
-let needsOut = document.getElementById("totalNeeds");
-let wantsOut = document.getElementById("totalWants");
-let leftover = document.getElementById("leftover");
-leftover = `Money Left Over: ${netMonthlyIncome-debtOut-needsOut-wantsOut}`;
+
 
 
 
@@ -180,16 +183,16 @@ function buildList(jobs) {
         // }
 
         //create a div element for the job title
-  
+
         //create a div element for the salary and format it as currency
 
         // document.getElementById(`inputGross`).value = job.salary;//.toLocaleString('en-US');
-        // html += `<div><strong>Salary</strong>: $${job.salary.toLocaleString('en-US')}</div>`; AGAHGAGHAHGAHGJAWGUHJAWHJABGVDWHJ poop
+        // html += `<div><strong>Salary</strong>: $${job.salary.toLocaleString('en-US')}</div>`;
 
 
 
         //close the section
-       
+
     }
 
     //return the completed html
